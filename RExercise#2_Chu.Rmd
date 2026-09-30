@@ -1,0 +1,96 @@
+---
+title: "RExercise#2_Chu"
+output: html_document
+---
+```{r}
+a <- 17
+b <- 5
+
+a + b
+a - b
+a * b
+a/b
+
+a%%b
+a%/%b
+
+a^10
+b^10
+```
+Answers: 
+1. The three results showed different answers one is the quitent, the reminder and the whole-number of the intger. All of them relate mathematically because of the division arithmetic problem.
+2. I was both incorrect. I misunderstood the decimals and the symbols on how to solve it.
+```{r}
+x <- 42
+y <- 42L
+z <- "42"
+w <- TRUE
+v <- 3 + 2i
+
+typeof(x)
+typeof(y)
+typeof(z)
+typeof(w)
+typeof(v)
+
+class(x)
+class(y)
+class(z)
+class(w)
+class(v)
+
+mode(x)
+mode(y)
+mode(z)
+mode(w)
+mode(v)
+```
+
+Answers: 
+3. The two type gave two different answers cause the x gave a double and on the y is the integer.
+4. The one that are the same are the object are y, z, and w. The integer is on both typeof() and class(). The logical showed up in three data types.
+```{r}
+num_string <- "123"
+
+typeof(num_string)
+class(num_string)
+mode(num_string)
+
+as.logical(0)
+as.logical(1)
+as.logical(num_string)
+
+bad_string <-"hello123"
+as.numeric(bad_string)
+```
+
+Amswer:
+5. I think R gave a warning rather than crashing the whole script is cause the other code runned so that the whole code won't be destroyed.
+6. When I tried both result turn out to be True. I thought it was supposed to show the warning or error.
+```{r}
+first_name <- "Juan"
+last_name <- "Dela Cruz"
+
+print(first_name)
+print(last_name)
+
+paste(first_name, last_name)
+paste0(first_name, last_name)
+
+paste(first_name,"-" ,last_name)
+
+age <- 21
+paste0(first_name, last_name, " is ", age, " years old")
+```
+
+Answer: 
+7. The two paste produced with a space and one without one. Paste has a space and Paste0 has no space.
+8. It showed an error when there was no comma on each object.
+
+```{r}
+5 + 5
+```
+
+Answer: 
+9. Because R is a case sensitive program "5" and 5 are two different case. One is string the other is object.
+10. It showed an error cause it used quatation. My diagnose on how to fix it is by carefully renaming the objects. like numbers_numeric and used it on all columns and row codes. Then used the coorect object name on the typeof, class, and mode.  123
