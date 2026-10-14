@@ -87,10 +87,13 @@ Answer:
 7. The two paste produced with a space and one without one. Paste has a space and Paste0 has no space.
 8. It showed an error when there was no comma on each object.
 
+Answer: 
+9. Because R is a case sensitive program "5" and 5 are two different case. One is string the other is object.
 ```{r}
 5 + 5
 ```
 
-Answer: 
-9. Because R is a case sensitive program "5" and 5 are two different case. One is string the other is object.
-10. It showed an error cause it used quatation. My diagnose on how to fix it is by carefully renaming the objects. like numbers_numeric and used it on all columns and row codes. Then used the coorect object name on the typeof, class, and mode.  123
+10. It showed an error cause it used quatation. My diagnose on how to fix it is by carefully renaming the objects. like numbers_numeric and used it on all columns and row codes. Then used the coorect object name on the typeof, class, and mode. 
+
+Conclusion:
+I learned that R programming has different data types, and each type determines how the data can be used. The typeof() function shows the underlying type of the object. The class() on the other hand identifies the class of an object. Understanding this functions is important because it can identify different types.
