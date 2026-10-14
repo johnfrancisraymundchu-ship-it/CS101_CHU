@@ -1,0 +1,123 @@
+---
+title: "RExercise#3"
+output: html_document
+---
+
+```{r}
+#Part A 
+#Create numeric vector and character vector
+scores_vector <- c(88, 92, 79, 95, 84)
+subjects_vector <- c("Math", "Science", "English", "History", "PE")
+#Create sequemce
+spaced_numbers <- c(1:20)
+seq(1, 20, by=2)
+spaced_number <- seq(1, 20, length.out = 5)
+#Create repetition
+rep(c("A"),4)
+rep(c("A", "B"), each=2)
+rep(c("A", "B"), 2)
+
+age_vector <- C(15, 28, 32, 36, 27, 18, 39, 42, 29, 35, 31, 27, 22, 37, 34, 19, 20, 57, 49, 50, 37, 46, 25, 17, 12, 42, 53, 41, 51, 35, 24, 33, 8)
+new_age <- c(age, 0, age)
+vec_num <- seq(20:60)
+
+```
+#Question 1
+#a. length(age)
+#b. 1/age
+#c. new_age <- c(age, 0, age)
+#d. min(age)#8
+#   max(age)#57
+#Question 2
+# Each displayed each characters or elements first. On the other hand times displayed the whole elements inside the parenthesis.
+#Question 3
+# The by 2 skipped th numbers by 2. The length.out doesn't displayed anything.
+#Question 4
+#a. vec_num <- seq(20:60)
+#b. 40 is the mean
+#c. 1,640 is the sum
+#d. 41 data points
+
+```{r}
+#Part B
+grades <- c(88, 92, 79, 95, 84)
+name_grades <- c("Math", "Science", "English", "History", "PE")
+grades[3]
+grades [c(1,4)]
+name_grades[c(2, 5)]
+grades[-c(1,4)]
+grades[grades >= 85]
+grades[10]
+integer_vector <- seq(1:100)
+result <- Filter(function(i) {all(i %% c(3,5,7) !=0)}, integer_vector)
+  print(result)
+```
+#Question 5
+#The situation are in checking the balance.
+#Question 6
+#R gave the N/A. R did this instead of an error so that the code cam still run instead of destroying everything.
+#Question 7
+# integer_vector <- seq(1:100)
+#result <- Filter(function(i) {all(i %% c(3,5,7) !=0)}, integer_vector)
+#  print(result)
+# 1  2  4  8 11 13 16 17 19 22 23 26 29 31 32 34 37 38 41 43 44 46 47 52 53 58 59 61 62 64 67
+# 68 71 73 74 76 79 82 83 86 88 89 92 94 97
+```{r}
+#Part C
+x <- c(1,2,3,4)
+y <- c(10,20,30,40)
+x + y
+x * 2
+
+z <- c(1, 2, 3, 4, 5, 6)
+short <- c(1, 0)
+z + short
+
+fruits <- c("apple", "banana", "cherry")
+fruits <- append(fruits, "date")
+fruits
+fruits <- append(fruits, "kiwi", after = 1)
+fruits
+
+z <- c(1, 2, 3, 4, 5, 6)
+z + c(1, 0, 1)
+```
+#Question 8
+# The recycling rule repeats the elements of the short vector until it is the sme as the longer one.
+#Question 9
+#a. z <- c(1, 2, 3, 4, 5, 6)
+#   z + c(1, 0, 1)
+#b. z + c(1, 0, 1, 1). This show a waring because the longer vector has 6 elements, while the shorter only has 4.
+```{r}
+student <- list(name = "Maria Santos", age = 20, grades = c(88, 92, 79), is_enrolled = TRUE)
+student["grades"]
+class(student["grades"])
+typeof(student["grades"])
+
+student[["grades"]]
+class(student[["grades"]])
+typeof(student[["grades"]])
+student$name
+student$name [2]
+```
+#Question 10
+#Single bracket return a smaller list. Double brackets extract the actual element from the list.
+#Questioon 11
+#R makes this distinction because a list can contain different types of objects, strings, numbers, vectors, and logical values. Single bracket select elements while keeping them in the list. Double brackets extract the actual object.
+```{r}
+#Part E
+inventory <- list(item = c("Notebook", "Pen", "Eraser"),price = c(25.50, 10.00, 5.00), in_stock = c(TRUE, TRUE, FALSE))
+print(inventory$item[inventory$in_stock])
+
+inventory$item <- append(inventory$item, "Ruler")
+inventory$price <- append(inventory$price, 15.00)
+inventory$in_stock <- append(inventory$in_stock, TRUE)
+inventory
+```
+#Question 12
+#inventory$item[inventory$in_stock] works cause the item and in_stock vectors have corresponding positions in the list. The logical vector contains TRUE, TRUE, FALSE so R selects the items at position where the value is TRUE. Therefore it returns "Notebook" and "Pen" while excluding "Eraser".
+#Question 13
+#Using three seperate vectors can cause mistakes if items are added, removed, or recorded in only one vector. Grouping related vector in a list makes the data easier to organize and access.
+
+#Conclusion
+#Vectors store elements of the same basic type, while list can store different types of objects, including vectors and other lists. Vector are useful for storing and processing similar values, such as prices and grades. Lists are useful for grouping related objeccts thta may have different types. For tabular data, such as an inventory with item names, prices, and stock statuses, a data frame is often the best choice. 
