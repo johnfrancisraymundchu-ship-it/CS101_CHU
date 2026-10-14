@@ -3,3 +3,57 @@ title: "RExercise#3"
 output: html_document
 ---
 
+```{r}
+#Part A 
+#Create numeric vector and character vector
+scores_vector <- c(88, 92, 79, 95, 84)
+subjects_vector <- c("Math", "Science", "English", "History", "PE")
+#Create sequemce
+spaced_numbers <- c(1:20)
+seq(1, 20, by=2)
+spaced_number <- seq(1, 20, length.out = 5)
+#Create repetition
+rep(c("A"),4)
+rep(c("A", "B"), each=2)
+rep(c("A", "B"), 2)
+
+age_vector <- C(15, 28, 32, 36, 27, 18, 39, 42, 29, 35, 31, 27, 22, 37, 34, 19, 20, 57, 49, 50, 37, 46, 25, 17, 12, 42, 53, 41, 51, 35, 24, 33, 8)
+new_age <- c(age, 0, age)
+vec_num <- seq(20:60)
+
+```
+#Question 1
+#a. length(age)
+#b. 1/age
+#c. new_age <- c(age, 0, age)
+#d. min(age)#8
+#   max(age)#57
+#Question 2
+# Each displayed each characters or elements first. On the other hand times displayed the whole elements inside the parenthesis.
+#Question 3
+# The by 2 skipped th numbers by 2. The length.out doesn't displayed anything.
+#Question 4
+#a. vec_num <- seq(20:60)
+#b. 40 is the mean
+#c. 1,640 is the sum
+#d. 41 data points
+
+```{r}
+#Part B
+grades <- c(88, 92, 79, 95, 84)
+name_grades <- c("Math", "Science", "English", "History", "PE")
+grades[3]
+grades [c(1,4)]
+name_grades[c(2, 5)]
+grades[-c(1,4)]
+grades[grades >= 85]
+grades[10]
+seq(1:100)
+Filter(function(i) {all(i%% c(3,5,7) !=0})
+```
+#Question 5
+#The situation are in checking the balance.
+#Question 6
+#R gave the N/A. R did this instead of an error so that the code cam still run instead of destroying everything.
+#Question 7
+#
