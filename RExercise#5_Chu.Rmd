@@ -113,4 +113,4 @@ rowMeans(all_students)
 #I would combine the five class matircs using rbind() so that the students from all classes are placed into one matrix.
 ```
 #Conclusion
-#A matrix is a two-dimensional data structure with rows and columns, while an array can have three or more dimensions. Matrices are useful for organizing data such as student scores, while arrays can store additional dimensions such as exam dates. The rbind() function adds new rows, while cbind() adds new columns. For example, I could use rbind() to add new students to a class score dataset or cbind() to add a new exam score column.
+#A matrix is a two-dimensional data structure with rows and columns, while an array can have three or more dimensions. Matrices are useful for organizing data such as student scores, while arrays can store additional dimensions such as exam dates. The rbind() function adds new rows, while cbind() adds new columns. For example, I could use rbind() to add new students to a class score dataset or cbind() to add a new exam score column.rrrrr
