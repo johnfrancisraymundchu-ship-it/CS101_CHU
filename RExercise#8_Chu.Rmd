@@ -1,0 +1,120 @@
+```{r}
+#Part A
+#a.
+students_scores <- c(Ana = 78, Ben = 92, Cid = 85, Dex = 92, Eli = 67, Fay = 88, Gio = 74)
+
+scores <- c(78, 92, 85, 92, 67, 88, 74)
+names(scores) <- c("Ana", "Ben", "Cid", "Dex", "Eli", "Fay", "Gio")
+
+#b.
+sort_ascending <- sort(students_scores)
+sort_ascending
+
+sort_decending <- sort(students_scores)
+sort_decending
+
+#c.
+sort_ascending
+
+#d.
+subjects <- c("Science", "Math", "English", "Filipino", "History", "ICT")
+incomplete <- c(85, NA, 90, 70, NA, 95)
+
+#e.
+sort(subjects)
+
+#f.
+sort(incomplete)
+
+#Question 2
+# Yes, because the vector was created with named elements, the names stayed correctly attached to their respective values during sorting.
+#If it did not fallow their values, the data will be disorganized.
+
+#Question 3
+#Sort() silently removes Na, which is dangerous because it shrinks the dataset and drops missing data without warning.
+```
+
+```{r}
+#Question 4
+students_scores <- c(Ana = 78, Ben = 92, Cid = 85, Dex = 92, Eli = 67, Fay = 88, Gio = 74)
+
+scores <- c(78, 92, 85, 92, 67, 88, 74)
+names(scores) <- c("Ana", "Ben", "Cid", "Dex", "Eli", "Fay", "Gio")
+
+sort_ascending <- sort(students_scores)
+sort_ascending
+
+sort_decending <- sort(students_scores)
+sort_decending
+
+subjects <- c("Science", "Math", "English", "Filipino", "History", "ICT")
+incomplete <- c(85, NA, 90, 70, NA, 95)
+
+sort(subjects)
+sort(incomplete)
+
+order(scores)
+sort(scores)
+#a. 
+scores[order(scores)]
+```
+
+```{r}
+#Question 5
+name <- c("Ana", "Ben", "Cid", "Dex", "Eli", "Fay", "Gio")
+score <- c(78, 92, 85, 92, 67, 88, 74)
+section <- c("A", "B", "A", "B", "A", "B", "A")
+
+students <- data.frame(name, score, section)
+students
+
+#a.
+students[order(students$score), ]
+
+#b. 
+students[order(students$score, decreasing = TRUE), ]
+
+#Question 6
+#order(scores) returns a vector of integer positions(indices) that tell you where each element belong to achieve a sorted sequence.
+
+#It only becomes useful and meaningful when you plug it into a square brackets to index and rearange a vector or data frame.
+
+#Question 7
+# sort() is built to operate on 1-dimensional vectors. If the attempt is to run a 2-dimensional data frame, R cannot process it because it doesn't know how to multiple columns simultaneously.
+
+#order() generates a vector index position rather than changing the data itself.
+```
+
+```{r}
+#Question 8
+students_scores <- c(Ana = 78, Ben = 92, Cid = 85, Dex = 92, Eli = 67, Fay = 88, Gio = 74)
+rank(students_scores)
+
+cbind(scores = students_scores, rank = rank(students_scores))
+
+#a.
+cbind(scores = students_scores[c("Ben", "Dex")], rank = rank (students_scores)[c("Ben", "Dex")])
+
+#b.
+#Both of them recieved 6.5 cause R defaults to mid-ranks for ties.
+```
+
+```{r}
+#Question 8
+#a. 
+sales <- data.frame(employee = c("Rey", "Sam", "Tin", "Uma", "Val"), units_sold = c(120, 145, 98, 130)
+                    
+sales$rank <- rank(-sales$units_sold)
+
+sales
+
+#b.
+sales_ordered <- sales[order(sales$units_sold, decreasing = TRUE), ]
+
+sales_ordered
+
+#Question 9
+#No, you cannot use order() alone to properly award ranks while also eordering the table.
+#Order only shows you a sequence not the tied up and other value assigned.
+```
+
