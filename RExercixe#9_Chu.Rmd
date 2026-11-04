@@ -1,0 +1,102 @@
+```{r}
+#Question 1
+#a.
+shoe_size <- c(6.5, 9.0, 8.5, 8.5, 10.5, 7.0, 9.5, 9.0, 13.0, 7.5, 10.5, 8.5, 12.0, 10.5,
+               13.0, 11.5, 8.5, 5.0, 10.0, 6.5, 7.5, 8.5, 10.5, 8.5, 10.5, 11.0, 9.0, 13.0)
+
+shoe_size <- c(6.5, 9.0, 8.5, 8.5, 10.5, 7.0, 9.5, 9.0, 13.0, 7.5, 10.5, 8.5, 12.0, 10.5,
+               13.0, 11.5, 8.5, 5.0, 10.0, 6.5, 7.5, 8.5, 10.5, 8.5, 10.5, 11.0, 9.0, 13.0)
+
+shoe_size <- c(
+  6.5, 9.0, 8.5, 8.5, 10.5, 7.0, 9.5, 9.0, 13.0, 7.5, 10.5, 8.5, 12.0, 10.5,
+  13.0, 11.5, 8.5, 5.0, 10.0, 6.5, 7.5, 8.5, 10.5, 8.5, 10.5, 11.0, 9.0, 13.0
+)
+
+height <- c(
+  66.0, 68.0, 64.5, 65.0, 70.0, 64.0, 70.0, 71.0, 72.0, 64.0, 74.5, 67.0, 71.0, 71.0,
+  77.0, 72.0, 59.0, 62.0, 72.0, 66.0, 64.0, 67.0, 73.0, 69.0, 72.0, 70.0, 69.0, 70.0
+)
+
+gender <- c(
+  "F", "F", "F", "F", "M", "F", "F", "F", "M", "F", "M", "F", "M", "M",
+  "M", "M", "F", "F", "M", "F", "F", "M", "M", "F", "M", "M", "M", "M"
+)
+
+shoesize_df <- data.frame(
+  Shoe_size = shoe_size,
+  Height = height,
+  Gender = gender
+)
+
+write.csv(shoesize_df, "shoesize.csv", row.names = FALSE)
+
+#b.
+shoesize_data <- read.csv("shoesize.csv")
+
+tail(shoesize_data, 5)
+
+#c.
+str(shoesize_data)
+
+summary(shoesize_data)
+
+#d.
+dim(shoesize_data)
+
+nrow(shoesize_data)
+ncol(shoesize_data)
+
+#e. 
+summary(shoesize_data)
+
+#f.
+males_subset <- subset(shoesize_data, Gender == "M")
+males_subset
+
+females_subset <- subset(shoesize_data, Gender == "F")
+females_subset
+
+#g.
+mean(shoesize_data$Shoe_size, na.rm = TRUE)
+
+mean(shoesize_data$Height, na.rm = TRUE)
+
+#h.
+#Yes, there is a strong positive correlation between shoe size and height.
+```
+
+```{r}
+#Question 2
+shoesize_data$Gender <- factor(shoesize_data$Gender)
+
+str(shoesize_data$Gender)
+```
+
+```{r}
+#Question 4
+str(shoesize_data)
+```
+
+```{r}
+#Question 5
+head(shoesize_data)
+
+tail(shoesize_data)
+```
+
+```{r}
+#Question 6
+#a.
+cor(shoesize_data$Shoe_size, shoesize_data$Height)
+
+#b.
+subset(shoesize_data, Shoe_size >= 11)
+
+shoesize_data[shoesize_data$Shoe_size >= 11, ]
+
+#Question 7
+#Males exhibit significantly higher mean values for both height and shoe size compared to females, reflecting natural physiological differences between the gender groups in the dataset.
+
+#Gender acts as a critical confounding factor. Because males and females cluster at different ends of the height and shoe size scales, analyzing the combined dataset without controlling for gender can distort the true relationship. Gender must be accounted for separately to accurately evaluate how shoe size and height correlate within each specific group.
+```
+
