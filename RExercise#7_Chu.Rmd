@@ -1,0 +1,138 @@
+```{r}
+#Question 1
+#a
+respondents <- 1:20
+sex <- c(2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2)
+fathers_occupation <- c(3, 3, 3, 3, 1, 2, 3, 1, 1, 1, 1, 2, 1, 3, 3, 1, 3, 1, 2, 1)
+persons_at_home <- c(5, 7, 3, 8, 5, 9, 9, 7, 8, 4, 7, 5, 4, 7, 8, 8, 2, 11, 7, 6)
+siblings_at_school <- c(6, 4, 4, 1, 2, 1, 5, 2, 1, 2, 1, 2, 5, 5, 2, 1, 2, 1, 3, 2)
+types_of_houses <- c(1, 2, 3, 1, 1, 1, 3, 1, 2, 1, 3, 3, 1, 2, 3, 3, 3, 1, 3, 2)
+
+length(respondents)
+length(sex)
+length(fathers_occupation)
+length(persons_at_home)
+length(siblings_at_school)
+length(types_of_houses)
+
+survey_df <- data.frame(
+  Respondents = respondents,
+  Sex = sex,
+  Fathers_Occupation = fathers_occupation,
+  Persons_at_Home = persons_at_home,
+  Siblings_at_School = siblings_at_school,
+  Types_of_Houses = types_of_houses
+)
+
+survey_df
+#b
+dim(survey_df)
+#20 rows and 6 columns
+#c
+survey_df$Sex <- factor(survey_df$Sex, levels = c(1, 2), labels = c("Male", "Female"))
+
+survey_df$Fathers_Occupation <- factor(survey_df$Fathers_Occupation, levels = c(1, 2, 3), labels = c("Farmer", "Driver", "Others"))
+
+survey_df$Types_of_Houses <- factor(survey_df$Types_of_Houses, levels = c(1, 2, 3), labels = c("Wood", "Semi-Concrete", "Concrete"))
+#d
+sapply(survey_df[, c("Respondents", "Persons_at_Home", "Siblings_at_School")], mean)
+#e
+head(survey_df, 5)
+survey_df[1:5, ]
+#f
+types_houses <- survey_df$Types_of_Houses
+#g
+subset(survey_df, Sex == "Male" & Fathers_Occupation == "Farmer")
+#h
+subset(survey_df, Sex == "Female" & siblings_at_school >= 5)
+```
+
+```{r}
+#Question 2
+#In a data frame, every column must have the exact same number of rows so that each row corresponds to a single, complete observation. If vector have different length it cannot align the data properly into the table. Survey data ensures that equal length guarantees that row i for every column belongs to the exact same respondents.
+```
+
+```{r}
+#Question 3
+#Nominal Data: Sex, Fathers_Occupation, and Types_of_Houses. The number are arbitrary labels used as codes, not quantities.
+
+#Numerical Data: Persons_at_Home and Siblings_at_School. Which represent actual quantites and frequencies.
+```
+
+```{r}
+#Question 4
+#Someone unfamiliar with the legend might misinterpret the numbers as actual mathematical quantities, scores, or identifiers. This shows the lack of self-documenting clarity in raw coded data; without proper labeling or converting data into factors, this could lead to misinterprentation from the lack of legend or access to external codebook. 
+```
+
+```{r}
+#Question 5
+respondents <- 1:20
+sex <- c(2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2)
+fathers_occupation <- c(3, 3, 3, 3, 1, 2, 3, 1, 1, 1, 1, 2, 1, 3, 3, 1, 3, 1, 2, 1)
+persons_at_home <- c(5, 7, 3, 8, 5, 9, 9, 7, 8, 4, 7, 5, 4, 7, 8, 8, 2, 11, 7, 6)
+siblings_at_school <- c(6, 4, 4, 1, 2, 1, 5, 2, 1, 2, 1, 2, 5, 5, 2, 1, 2, 1, 3, 2)
+types_of_houses <- c(1, 2, 3, 1, 1, 1, 3, 1, 2, 1, 3, 3, 1, 2, 3, 3, 3, 1, 3, 2)
+
+length(respondents)
+length(sex)
+length(fathers_occupation)
+length(persons_at_home)
+length(siblings_at_school)
+length(types_of_houses)
+
+survey_df <- data.frame(
+  Respondents = respondents,
+  Sex = sex,
+  Fathers_Occupation = fathers_occupation,
+  Persons_at_Home = persons_at_home,
+  Siblings_at_School = siblings_at_school,
+  Types_of_Houses = types_of_houses
+)
+
+survey_df
+
+sum(survey_df$Sex == 1, na.rm = TRUE)
+nrow(subset(survey_df, Sex == 1))
+
+#Yes, a very small sample size (n=20) significantly reduces confidence in generalizing any pattern to a larger population.
+```
+
+```{r}
+respondents <- 1:20
+sex <- c(2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2)
+fathers_occupation <- c(3, 3, 3, 3, 1, 2, 3, 1, 1, 1, 1, 2, 1, 3, 3, 1, 3, 1, 2, 1)
+persons_at_home <- c(5, 7, 3, 8, 5, 9, 9, 7, 8, 4, 7, 5, 4, 7, 8, 8, 2, 11, 7, 6)
+siblings_at_school <- c(6, 4, 4, 1, 2, 1, 5, 2, 1, 2, 1, 2, 5, 5, 2, 1, 2, 1, 3, 2)
+types_of_houses <- c(1, 2, 3, 1, 1, 1, 3, 1, 2, 1, 3, 3, 1, 2, 3, 3, 3, 1, 3, 2)
+
+length(respondents)
+length(sex)
+length(fathers_occupation)
+length(persons_at_home)
+length(siblings_at_school)
+length(types_of_houses)
+
+survey_df <- data.frame(
+  Respondents = respondents,
+  Sex = sex,
+  Fathers_Occupation = fathers_occupation,
+  Persons_at_Home = persons_at_home,
+  Siblings_at_School = siblings_at_school,
+  Types_of_Houses = types_of_houses
+)
+
+survey_df
+
+summary(survey_df)
+#Why R didn't read it? When data is intially imported as numbers, R treats them as numeric or integer data types by default. R only look for the data types not the meaning.
+
+#This highlights a fundemental distinction in programming how data is stored is not always the same as what it means. 
+```
+
+```{r}
+#Question 7
+#The mean of PersonsatHome is meaningful to report because it represents an actual quantitative measurement.
+
+#The mean of Sex is not meaningful to report bacause sex is a categorical variable stored with arbitrary numeric codes.
+```
+
