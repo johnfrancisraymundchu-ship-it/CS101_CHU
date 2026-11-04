@@ -100,15 +100,17 @@ cbind(scores = students_scores[c("Ben", "Dex")], rank = rank (students_scores)[c
 ```
 
 ```{r}
-#Question 8
-#a. 
-sales <- data.frame(employee = c("Rey", "Sam", "Tin", "Uma", "Val"), units_sold = c(120, 145, 98, 130)
-                    
+# a.
+sales <- data.frame(
+  employee = c("Rey", "Sam", "Tin", "Uma", "Val"),
+  units_sold = c(120, 145, 98, 130, 110)
+)
+
 sales$rank <- rank(-sales$units_sold)
 
 sales
 
-#b.
+# b.
 sales_ordered <- sales[order(sales$units_sold, decreasing = TRUE), ]
 
 sales_ordered
