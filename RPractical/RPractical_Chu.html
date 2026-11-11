@@ -357,7 +357,6 @@ display: none;
 </div>
 
 
-<p>Part A</p>
 <pre class="r"><code>#Part A
 #A1
 v &lt;- seq(5, 50, by=5)
@@ -422,9 +421,8 @@ students &lt;- data.frame(
   final = c(82, 79, 96, 71, 80, 91, 93, 65),
   attendance = c(95, 88, 100, 72, 90, 85, 98, 60),
   stringsAsFactors = FALSE
-)
-
-#B2
+)</code></pre>
+<pre class="r"><code>#B2
 str(students)</code></pre>
 <pre><code>## &#39;data.frame&#39;:    8 obs. of  7 variables:
 ##  $ id        : int  1 2 3 4 5 6 7 8
@@ -467,9 +465,8 @@ students</code></pre>
 ## 7  7 Grace   F       A      95    93         98    94.0
 ## 8  8  Hiro   M       B      59    65         60    62.0</code></pre>
 <pre class="r"><code>#B4
-students$passed &lt;- students$average &gt;= 70 &amp; students$attendance &gt;= 75
-
-#B5
+students$passed &lt;- students$average &gt;= 70 &amp; students$attendance &gt;= 75</code></pre>
+<pre class="r"><code>#B5
 students$standing &lt;- ifelse(students$average &gt;= 90, &quot;Honors&quot;,
                      ifelse(students$average &gt;= 75, &quot;Good&quot;, &quot;Needs Support&quot;))
 students</code></pre>
@@ -627,9 +624,8 @@ table(students_all$sex)</code></pre>
 <pre class="r"><code># E3
 as.integer(students_all$sex)</code></pre>
 <pre><code>##  [1] 1 2 2 1 1 2 1 2 1 2</code></pre>
-<pre class="r"><code># The numbers are just levels in alphabetical order.
-
-# E4
+<pre class="r"><code># The numbers are just levels in alphabetical order.</code></pre>
+<pre class="r"><code># E4
 students_all$sex_label &lt;- factor(students_all$sex,
                                  levels = c(&quot;F&quot;, &quot;M&quot;),
                                  labels = c(&quot;Female&quot;, &quot;Male&quot;))
