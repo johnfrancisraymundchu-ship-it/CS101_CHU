@@ -1,5 +1,5 @@
 ---
-title: "RPractical#2_Chu"
+title: "R Programming Practical Examination"
 author: "John Francis Raymund Chu"
 date: "2026-11-18"
 output:
