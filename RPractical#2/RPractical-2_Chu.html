@@ -13,7 +13,7 @@
 
 <meta name="date" content="2026-11-18" />
 
-<title>RPractical#2_Chu</title>
+<title>R Programming Practical Examination</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -350,14 +350,15 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">RPractical#2_Chu</h1>
+<h1 class="title toc-ignore">R Programming Practical Examination</h1>
 <h4 class="author">John Francis Raymund Chu</h4>
 <h4 class="date">2026-11-18</h4>
 
 </div>
 
 
-<p>##Part A: Importing and Inspecting a CSV</p>
+<div id="part-a-importing-and-inspecting-a-csv" class="section level2">
+<h2>Part A: Importing and Inspecting a CSV</h2>
 <pre class="r"><code>#
 emp_df &lt;- read.csv(&quot;employees.csv&quot;, stringsAsFactors = FALSE)</code></pre>
 <pre class="r"><code>#A2
@@ -408,7 +409,9 @@ print(mean(emp_df$salary, na.rm = TRUE))</code></pre>
 <pre><code>## [1] 64900</code></pre>
 <pre class="r"><code>print(max(emp_df$department))</code></pre>
 <pre><code>## [1] &quot;Sales&quot;</code></pre>
-<p>##Part B: Creating Data Frames</p>
+</div>
+<div id="part-b-creating-data-frames" class="section level2">
+<h2>Part B: Creating Data Frames</h2>
 <pre class="r"><code># B1
 new_hires &lt;- data.frame(
   emp_id = c(21, 22, 23),
@@ -426,7 +429,9 @@ emp_all &lt;- rbind(emp_df, new_hires)
 print(dim(emp_all))</code></pre>
 <pre><code>## [1] 23  8</code></pre>
 <pre class="r"><code>emp_all$bonus &lt;- round(emp_all$salary * 0.05)</code></pre>
-<p>##Part C: Subsetting</p>
+</div>
+<div id="part-c-subsetting" class="section level2">
+<h2>Part C: Subsetting</h2>
 <pre class="r"><code># C1
 print(emp_all[1:5, c(&quot;name&quot;, &quot;salary&quot;)])</code></pre>
 <pre><code>##    name salary
@@ -469,6 +474,7 @@ print(head(emp_all[, -c(1, 9)], 3))</code></pre>
 <pre class="r"><code># C6
 print(emp_all$salary[emp_all$name == &quot;Mia&quot;])</code></pre>
 <pre><code>## [1] 56000</code></pre>
+</div>
 <div id="part-d-factors" class="section level2">
 <h2>Part D: Factors</h2>
 <pre class="r"><code># D1
@@ -511,7 +517,9 @@ for (dept in levels(emp_all$department)) {
 ## [1] &quot;HR : 48200&quot;
 ## [1] &quot;IT : 77571&quot;
 ## [1] &quot;Sales : 55333&quot;</code></pre>
-<p>##Part E: Conditional Statement</p>
+</div>
+<div id="part-e-conditional-statement" class="section level2">
+<h2>Part E: Conditional Statement</h2>
 <pre class="r"><code># E1
 emp_all$salary_band &lt;- ifelse(
   emp_all$salary &gt;= 70000, &quot;High&quot;,
@@ -559,7 +567,9 @@ if (total &lt; 1600000) {
 <pre><code>## [1] &quot;Budget OK&quot;</code></pre>
 <pre class="r"><code>print(total)</code></pre>
 <pre><code>## [1] 1578770</code></pre>
-<p>##Part E: Conditional Statement</p>
+</div>
+<div id="part-e-conditional-statement-1" class="section level2">
+<h2>Part E: Conditional Statement</h2>
 <pre class="r"><code># F1
 print(head(sort(emp_all$salary, decreasing = TRUE), 5))</code></pre>
 <pre><code>## [1] 95000 92000 88000 83000 79000</code></pre>
